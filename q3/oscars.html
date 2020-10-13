@@ -1,0 +1,61 @@
+<!--
+    Name: Mohamed Izzat Khair Bin Mohamed Noor
+    Email: mohamedik.2019
+-->
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Midterm - Q3 - Oscars</title>
+
+    <!-- CSS (Use this section if you need to) -->
+    <style>
+
+        /* YOUR CSS CODE GOES HERE */
+        #jumbo {
+            min-height: 100px;
+            margin-bottom: 20px;
+        }
+
+        #cardsContainer{
+            margin-top: 15px;
+        }
+        
+        
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body onload="dropdown(),cards()">
+
+    <!-- YOUR CODE GOES HERE -->
+
+    <div class="jumbotron text-center"  id="jumbo"
+        style="background-color: aqua;">
+        <div class="container">
+             <h1>Oscars Winners</h1>
+        </div>
+    </div>
+    <div class="container text-center">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              List of Decades
+            </button>
+            <div class="dropdown-menu" id="dropdownmenu" aria-labelledby="dropdownMenuButton">
+            </div>
+        </div>
+    </div>
+    <div class="container" id="cardsContainer">
+        <div class="card-columns" id="displayCards">
+            
+        </div>
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="oscars.js"></script>
+</body>
+</html>

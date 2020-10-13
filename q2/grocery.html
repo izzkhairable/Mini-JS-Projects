@@ -1,0 +1,95 @@
+<!--
+    Name: Mohamed Izzat Khair Bin Mohamed Noor
+    Email: mohamedik.2019
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Midterm - Q2 - Grocery</title>
+
+    <!-- CSS (Use this section if you need to) -->
+    <style>
+
+        /* YOUR CSS CODE GOES HERE */
+        #maindiv{
+            margin-top: 20px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        
+        #maindiv>div:nth-child(1){
+               margin-bottom: 30px; 
+        }
+
+        #firstCard,#secondCard{
+            padding: 15px;
+        }
+          
+        form button{
+          margin-left: 15px;
+        }
+
+        #checklist{
+            list-style-type:none;
+            margin: 0px;
+            padding: 0px;
+            margin-top: 15px;
+        }
+
+        #resultCalc{
+            margin-top: 15px;
+        }
+
+        .alert{
+            margin-top: 15px;
+        }
+        
+    </style>  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+    <!-- YOUR CODE GOES HERE -->
+    <div id="maindiv">
+        <div class="row text-center">
+            <div class="col">
+                <h4>Shopping List</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body" id="firstCard">
+                        <form action="" id="mainform">
+                                 <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">What to buy</div>
+                                      </div>
+                                      <input type="text" placeholder="Enter Item Name" class="form-control" id="groceryinput">
+                                    <button class="btn btn-outline-info" id="addbtn">
+                                        Add
+                                      </button>
+                                 </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body" id="secondCard">
+                        <h6>Calculate Total Amount</h6>
+                        <button class="btn btn-outline-info" onclick="return processItem()" id="calculatebtn">Calculate
+                        </button>
+                        <div id="resultCalc">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="grocery.js"></script>
+</body>
+</html>

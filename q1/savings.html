@@ -1,0 +1,94 @@
+<!--
+    Name: Mohamed Izzat Khair Bin Mohamed Noor
+    Email: mohamedik.2019
+-->
+<!DOCTYPE html>
+<html>
+<head>
+     
+     <title>Midterm - Q1 - Savings</title>
+
+     <!-- CSS (Use this section if you need to) -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <style>
+          /*
+               YOUR CODE GOES HERE
+          */
+          h2{
+               margin-bottom: 30px;
+          }
+
+          .text-primary{
+               margin-bottom: 48px;
+               font-weight: bold;
+          }
+
+          #maindiv{
+               margin-top: 40px;
+               width: 70%;
+          }
+
+          #inputs>div:nth-child(1){
+               margin-bottom: 16px; 
+               
+          }
+
+          #inputs>div:nth-child(2){
+               margin-bottom: 16px; 
+          }
+
+          #inputs>div:nth-child(3){
+               margin-bottom: 48px; 
+          }
+
+          #results{
+               margin-top: 40px;
+               
+          }
+
+          .table{
+               width: 500px;
+          }
+     </style>
+
+</head>
+<body>
+     
+     <!-- YOUR CODE GOES HERE -->
+     <div class="container" id="maindiv">
+          <div id="headingtext" class="text-center">
+               <h2>Savings</h2>
+               <h4 class="text-primary">How long does it take for me to reach My Goal?</h4>
+          </div>
+          <form action="" id="mainform">
+               <div id="inputs">
+                    <div class="input-group">
+                         <div class="input-group-prepend">
+                           <div class="input-group-text">Initial Amount ($)</div>
+                         </div>
+                         <input type="number" class="form-control" id="initialamtinput">
+                    </div>
+     
+                    <div class="input-group">
+                         <div class="input-group-prepend">
+                           <div class="input-group-text">Yearly Interest (%)</div>
+                         </div>
+                         <input type="number" class="form-control" id="yearlyintinput" >
+                    </div>
+     
+                    <div class="input-group">
+                         <div class="input-group-prepend">
+                           <div class="input-group-text">My Goal ($)</div>
+                         </div>
+                         <input type="number" class="form-control" id="mygoalinput" >
+                    </div>
+               </div>
+               <button id="calculatebtn" class="btn btn-danger text-right">Calculate</button>
+          </form>
+          <div id="results">
+               
+          </div>
+     </div>
+     <script src="savings.js"></script>
+</body>
+</html>
