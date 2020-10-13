@@ -4,21 +4,23 @@
 */
 
 // YOUR CODE GOES HERE
-//General Call Api Function
 function callApi(url, callback,async,extra=null){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         callback(JSON.parse(this.responseText).records,extra);
       }else{
-          console.log(`404 Reason [This is year's Oscar yet to be included]`)
+         
+          console.log(`404 Reason [This is year's Oscar(2020) yet to be included]`)
       }
     };
     xhttp.open("GET", url, async);
     xhttp.send();
 }
 
+
 function dropdown(){
+     //Prepare for the future oscars(if api adds it)
     var curryear=new Date().getFullYear()
     var roundyear=(Math.round(Number(curryear) / 10) * 10)
     var startyear=1920
@@ -29,6 +31,7 @@ function dropdown(){
         startyear+=10
     }
 }
+
 
 function populateDropdown(data,year){
     var totalCount=Number(data.length)
@@ -43,11 +46,11 @@ function populateDropdown(data,year){
 }
 
 
-
 function cards(){
     var url="../api/winner/read.php"
     callApi(url,populateCards,true)
 }   
+
 
 function cardsYear(year){
     var url=`../api/winner/search.php?d=${year}`
@@ -69,7 +72,6 @@ function populateCards(data,extra){
             </div>
         `
     }
-
     document.getElementById('displayCards').innerHTML=str
 }
 
