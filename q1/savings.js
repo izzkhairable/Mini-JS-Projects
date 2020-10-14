@@ -16,10 +16,9 @@ function calculate(event){
     var initialamt=document.getElementById('initialamtinput').value;
     var yearlyint= document.getElementById('yearlyintinput').value;
     var goalamt= document.getElementById('mygoalinput').value;
-    console.log(initialamt, yearlyint, goalamt)
 
     var curramt=initialamt;
-    var year=0
+    var year=0;
     if(Number(goalamt)>curramt){  
         while(curramt<goalamt){
             curramt*=(1+(yearlyint/100));

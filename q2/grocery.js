@@ -15,25 +15,24 @@ const shopList = [
 ];
 
 var addbtn=document.getElementById('addbtn');
-addbtn.addEventListener('click', function(event){addItem(event)})
+addbtn.addEventListener('click', function(event){addItem(event)});
 
 // YOUR CODE GOES HERE
 function addItem(event){
     event.preventDefault();
-
     var groceryinp=document.getElementById('groceryinput').value;
-    var groceryel=document.getElementById('groceryinput')
-    groceryel.value=''
+    var groceryel=document.getElementById('groceryinput');
+    groceryel.value='';
 
     if(groceryinp=='' || groceryinp==null){
         groceryel.setAttribute('placeholder','Aiyo! Enter Item Name!');
-        return
+        return;
     }
 
     var result=shopList.find(element => element.item==groceryinp.toLowerCase());
     if(result==null){
         groceryel.setAttribute('placeholder','Sorry! Don\'t have it!');
-        return
+        return;
     }
     
     groceryel.setAttribute('placeholder','Enter Item Name');
@@ -52,9 +51,9 @@ function addItem(event){
         </label>
     </div>`
 
-    var listItem=document.createElement('li')
-    listItem.innerHTML=str
-    document.getElementById('checklist').appendChild(listItem)
+    var listItem=document.createElement('li');
+    listItem.innerHTML=str;
+    document.getElementById('checklist').appendChild(listItem);
 
 }
 
@@ -67,17 +66,17 @@ function processItem(){
     }
 
     var items=document.getElementsByClassName('form-check-input');
-    var str=``
+    var str=``;
     var totalPrice=0;
     var countNoCheck=0;
     for(item of items){
         if(item.checked==true){
             var itemdetail = shopList.find(element => element.item==item.value.toLowerCase());
             var price=itemdetail.price
-            str+=`${item.value.toLowerCase()} - $${price.toFixed(2)}<br>`
-            totalPrice+=price
+            str+=`${item.value.toLowerCase()} - $${price.toFixed(2)}<br>`;
+            totalPrice+=price;
         }else{
-            countNoCheck+=1
+            countNoCheck+=1;
         }
     }
 
@@ -85,15 +84,15 @@ function processItem(){
         var alert=`
         <div class="alert alert-danger">
             You need to select items for calculation!
-        </div>`
+        </div>`;
 
         document.getElementById('maindiv').innerHTML+=alert;
-        document.getElementById('resultCalc').innerHTML=``
-        return false
+        document.getElementById('resultCalc').innerHTML=``;
+        return false;
     }
     
-    str+=`<br><br>The total cost is : $${totalPrice.toFixed(2)}`
-    document.getElementById('resultCalc').style.display="block"
+    str+=`<br><br>The total cost is : $${totalPrice.toFixed(2)}`;
+    document.getElementById('resultCalc').style.display="block";
     document.getElementById('resultCalc').innerHTML=str;
-    return false
+    return false;
 }
