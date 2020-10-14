@@ -9,9 +9,6 @@ function callApi(url, callback,async,extra=null){
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         callback(JSON.parse(this.responseText).records,extra);
-      }else{
-         
-          console.log(`404 Reason [This is year's Oscar(2020) yet to be included]`)
       }
     };
     xhttp.open("GET", url, async);
@@ -20,15 +17,18 @@ function callApi(url, callback,async,extra=null){
 
 
 function dropdown(){
-     //Prepare for the future oscars(if api adds it)
-    var curryear=new Date().getFullYear()
-    var roundyear=(Math.round(Number(curryear) / 10) * 10)
-    var startyear=1920
+    /* ASSUMPTION
+       Assuming that the API Could return Oscars for
+       current decade 2020 and beyond in the future.
+   */
+    var curryear=new Date().getFullYear();
+    var roundyear=((Math.round(Number(curryear) / 10) -1) * 10);
+    var startyear=1920;
     while(roundyear>=startyear){
 
-        var url="../api/winner/search.php?d="+startyear
-        callApi(url,populateDropdown,false,startyear)
-        startyear+=10
+        var url="../api/winner/search.php?d="+startyear;
+        callApi(url,populateDropdown,false,startyear);
+        startyear+=10;
     }
 }
 
@@ -47,19 +47,19 @@ function populateDropdown(data,year){
 
 
 function cards(){
-    var url="../api/winner/read.php"
-    callApi(url,populateCards,true)
+    var url="../api/winner/read.php";
+    callApi(url,populateCards,true);
 }   
 
 
 function cardsYear(year){
-    var url=`../api/winner/search.php?d=${year}`
-    callApi(url,populateCards,true)
+    var url=`../api/winner/search.php?d=${year}`;
+    callApi(url,populateCards,true);
 }
 
 
 function populateCards(data,extra){
-    var str=""
+    var str="";
     for(winner of data){
        str+=`
             <div class="card mt-2" style="">
@@ -70,9 +70,9 @@ function populateCards(data,extra){
                     <p class="card-text m-0"><em>${winner.movie.description}</em></p>
                 </div>
             </div>
-        `
+        `;
     }
-    document.getElementById('displayCards').innerHTML=str
+    document.getElementById('displayCards').innerHTML=str;
 }
 
 

@@ -9,6 +9,7 @@ var calcbtn= document.getElementById('calculatebtn');
 calcbtn.addEventListener('click', function(event){calculate(event)});
 
 function calculate(event){
+
     event.preventDefault();
 
 
@@ -25,8 +26,11 @@ function calculate(event){
             year+=1
         }
     }
-
-
+    
+    /* ASSUMPTION
+       If the current amt inputted is more than 
+       0 then will display year else will display -
+    */
     var str=`
         <h4 class="text-success">Result</h4>
         <table class="table table-bordered">
