@@ -93,6 +93,7 @@ function processItem(){
     }
     
     str+=`<br><br>The total cost is : $${totalPrice.toFixed(2)}`
+    document.getElementById('resultCalc').style.display="block"
     document.getElementById('resultCalc').innerHTML=str;
     return false
 }
